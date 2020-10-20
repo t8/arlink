@@ -21,7 +21,7 @@
               <div class="column">
                 <div class="file is-medium is-fullwidth">
                   <label class="extruded file-label">
-                    <input class="file-input" type="file" name="keyfile">
+                    <input class="file-input" type="file" name="keyfile" accept="application/json" @change="onFileChange">
                     <span class="file-cta">
                       <span class="file-icon">
                         <font-awesome-icon :icon="['fas', 'key']" />
@@ -48,8 +48,29 @@
 
 export default {
   name: 'App',
-  components: {
-
+  data() { 
+    return {
+      keyfile: Object,
+      address: String,
+      currency: String
+    }
+  },
+  methods: {
+    onFileChange(event) {
+      let file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsText(file, "UTF-8");
+      reader.onload =  evt => {
+        this.keyfile = JSON.parse(evt.target.result);
+        this.commenceUpload;
+      }
+      reader.onerror = evt => {
+        console.error(evt);
+      }
+    },
+    commenceUpload() {
+      
+    }
   }
 }
 </script>
@@ -111,7 +132,7 @@ export default {
         border-radius: 24px;
         background: #ffffff;
 
-        &.button, &.file-label {
+        &.button {
           &:hover {
             -webkit-transition: all 100ms linear;
             -ms-transition: all 100ms linear;
