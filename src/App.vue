@@ -17,7 +17,26 @@
                 </div>
               </div>
             </div>
-            <button class="button is-large is-fullwidth"><span class="has-text-rainbow has-text-700">Link</span></button>
+            <div class="columns">
+              <div class="column">
+                <div class="file is-medium is-fullwidth">
+                  <label class="extruded file-label">
+                    <input class="file-input" type="file" name="keyfile">
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <font-awesome-icon :icon="['fas', 'key']" />
+                      </span>
+                      <span class="file-label">
+                        Attach your keyfile
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="column">
+                <button class="button extruded is-medium is-fullwidth"><span class="has-text-rainbow has-text-700">Link</span></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -83,22 +102,28 @@ export default {
                     inset -2px -2px 10px #ffffff;    
       }
 
-      button {
-        -webkit-transition: background-color 100ms linear;
-        -ms-transition: background-color 100ms linear;
-        transition: background-color 100ms linear;
+      .extruded {
+        -webkit-transition: all 100ms linear;
+        -ms-transition: all 100ms linear;
+        transition: all 100ms linear;
         margin-top: 40px;
         border: none;
         border-radius: 24px;
         background: #ffffff;
-        box-shadow: 5px 5px 14px #e8e8e8, 
-                    -5px -5px 14px #ffffff;
 
-        &:hover {
-          -webkit-transition: background-color 100ms linear;
-          -ms-transition: background-color 100ms linear;
-          transition: background-color 100ms linear;
-          background: #fcfcfc;
+        &.button, &.file-label {
+          &:hover {
+            -webkit-transition: all 100ms linear;
+            -ms-transition: all 100ms linear;
+            transition: all 100ms linear;
+            box-shadow: 5px 5px 14px #e8e8e8, 
+                        -5px -5px 14px #ffffff;
+          }
+        }
+
+        .file-cta {
+          border: none;
+          background-color: white;
         }
       }
     }
