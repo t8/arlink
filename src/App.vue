@@ -7,12 +7,12 @@
             <h1 class="title is-2 has-text-centered"><span class="has-text-500">Ar</span><span class="has-text-700">Link</span></h1>
             <div class="columns">
               <div class="column">
-                <input class="input is-medium" type="text" placeholder="Address">
+                <input class="input is-medium" type="text" placeholder="Address" v-model="address">
               </div>
               <div class="column">
                 <div class="select is-medium is-fullwidth">
-                  <select>
-                    <option>ETH</option>
+                  <select v-model="currency">
+                    <option selected>ETH</option>
                   </select>
                 </div>
               </div>
@@ -34,7 +34,10 @@
                 </div>
               </div>
               <div class="column">
-                <button class="button extruded is-medium is-fullwidth"><span class="has-text-rainbow has-text-700">Link</span></button>
+                <button class="button extruded is-medium is-fullwidth" @click="commenceUpload" :disabled="success">
+                  <span v-if="!success" class="has-text-rainbow has-text-700">Link</span>
+                  <font-awesome-icon v-if="success" :icon="['fas', 'check']" />
+                </button>
               </div>
             </div>
           </div>
@@ -45,31 +48,58 @@
 </template>
 
 <script>
+import Arweave from 'arweave';
 
 export default {
   name: 'App',
   data() { 
     return {
-      keyfile: Object,
-      address: String,
-      currency: String
+      keyfile: {},
+      address: "",
+      currency: "ETH",
+      success: false
     }
   },
   methods: {
+    // Thanks to: raymondcamden.com/2019/05/21/reading-client-side-files-for-validation-with-vuejs
     onFileChange(event) {
       let file = event.target.files[0];
       const reader = new FileReader();
       reader.readAsText(file, "UTF-8");
       reader.onload =  evt => {
         this.keyfile = JSON.parse(evt.target.result);
-        this.commenceUpload;
       }
       reader.onerror = evt => {
         console.error(evt);
       }
     },
-    commenceUpload() {
-      
+    async commenceUpload() {
+      const arweave = Arweave.init();
+
+      // Create the tx
+      let transaction = await arweave.createTransaction({
+        data: Math.random().toString().slice(-4)
+      }, this.keyfile);
+
+      // Add the necessary tags
+      transaction.addTag("Application", "ArLink");
+      transaction.addTag("Chain", this.currency);
+      transaction.addTag("Wallet", this.address);
+
+      await arweave.transactions.sign(transaction, this.keyfile);
+      try {
+        // Post the tx
+
+        const response = await arweave.transactions.post(transaction);
+        if (response.status === 200) {
+          // It succeeded
+          this.success = true;
+        } else {
+          console.error("Something went wrong with posting the transaction");
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 }

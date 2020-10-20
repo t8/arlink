@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.0",
+    "arweave": "^1.9.1",
     "bulma": "^0.9.1",
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
