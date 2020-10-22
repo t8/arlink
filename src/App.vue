@@ -74,7 +74,13 @@ export default {
       }
     },
     async commenceUpload() {
-      const arweave = Arweave.init();
+      const arweave = Arweave.init({
+        host: 'arweave.net',
+        port: 443,
+        protocol: 'https',
+        timeout: 20000,
+        logging: false,
+      });
 
       // Create the tx
       let transaction = await arweave.createTransaction({
