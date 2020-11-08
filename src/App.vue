@@ -13,6 +13,7 @@
                 <div class="select is-medium is-fullwidth">
                   <select v-model="currency">
                     <option selected>ETH</option>
+                    <option>BTC</option>
                   </select>
                 </div>
               </div>
