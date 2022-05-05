@@ -23,7 +23,7 @@ The `Chain` and `Wallet` tags are customizable to whatever the user wants. Becau
 
 ## Querying for Wallets
 
-In order to query for a wallet address from a different blockchain, see the GraphQL examples below:.......------
+In order to query for a wallet address from a different blockchain, see the GraphQL examples below:.......------------
 
 To get all transactions of linked wallets for a given user:
 ```
