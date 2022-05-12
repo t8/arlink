@@ -21,7 +21,7 @@ Wallet: "0x614B0d11A0439A0791E8b96b2107582bDcB3B018"
 
 The `Chain` and `Wallet` tags are customizable to whatever the user wants. Because of this, nobody necessarily has to use a currency listed on my POC site. This specification, though simple, will allow for an easy and straightforward way for people to pull external wallet addresses of a given user.
 
-## Querying for Wallets
+## Querying for Wallets....
 
 In order to query for a wallet address from a different blockchain, see the GraphQL examples below:.......------------
 
