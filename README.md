@@ -10,7 +10,7 @@ You can find a UI for ArLink on the [Arweave Permaweb](https://arweave.net/CodqS
 
 I created ArLink with the intentions of establishing a way to get a user's Ethereum wallet address from the Arweave. By having Arweave users link their accounts to other blockchains, profit-sharing communities can choose to pay out users in other cryptocurrencies not on the *weave*.
 
-## Tag Specification
+## Tag Specification.....
 
 See [this](https://viewblock.io/arweave/tx/keJVC7chkdE_NTQpiewwRJP7rom2DnQSNy9L3STNp_k) example:...........asd
 ```json
