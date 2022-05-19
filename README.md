@@ -43,7 +43,7 @@ query {
 }
 ```
 
-To get all linked wallets of a currency for a given user:
+To get all linked wallets of a currency for a given user: AJSDHSAJD ASD
 ```
 query {
   transactions(
