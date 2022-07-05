@@ -12,7 +12,7 @@ I created ArLink with the intentions of establishing a way to get a user's Ether
 
 ## Tag Specification.....
 
-See [this](https://viewblock.io/arweave/tx/keJVC7chkdE_NTQpiewwRJP7rom2DnQSNy9L3STNp_k) example:...........asd.........................asdasdasd.........................asdsad..asdasd..asdsadasdasd
+See [this](https://viewblock.io/arweave/tx/keJVC7chkdE_NTQpiewwRJP7rom2DnQSNy9L3STNp_k) example:...........asd.........................asdasdasd.........................asdsad..asdasd..asdsadasdasd.....asdsad
 ```json
 Application: "ArLink"
 Chain: "ETH"
