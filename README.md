@@ -19,7 +19,7 @@ Chain: "ETH"
 Wallet: "0x614B0d11A0439A0791E8b96b2107582bDcB3B018"
 ```
 
-The `Chain` and `Wallet` tags are customizable to whatever the user wants. Because of this, nobody necessarily has to use a currency listed on my POC site. This specification, though simple, will allow for an easy and straightforward way for people to pull external wallet addresses of a given user.
+The `Chain` and `Wallet` tags are customizable to whatever the user wants. Because of this, nobody necessarily has to use a currency listed on my POC site. This specification, though simple, will allow for an easy and straightforward way for people to pull external wallet addresses of a given user.aSas
 
 ## Querying for Wallets....
 
