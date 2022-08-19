@@ -15,7 +15,7 @@ I created ArLink with the intentions of establishing a way to get a user's Ether
 See [this](https://viewblock.io/arweave/tx/keJVC7chkdE_NTQpiewwRJP7rom2DnQSNy9L3STNp_k) example:...........asd.........................asdasdasd.........................asdsad..asdasd..asdsadasdasd.....asdsadasdsadasjhgjhjhh..asdasdadasd
 ```json
 Application: "ArLink"
-Chain: "ETH"
+Chain: "ETH".....
 Wallet: "0x614B0d11A0439A0791E8b96b2107582bDcB3B018"
 ```
 
