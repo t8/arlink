@@ -25,7 +25,7 @@ The `Chain` and `Wallet` tags are customizable to whatever the user wants. Becau
 
 In order to query for a wallet address from a different blockchain, see the GraphQL examples below:............------------..asdasd.........asdadad......................
 
-To get all transactions of linked wallets for a given user:
+To get all transactions of linked wallets for a given user: asdasdsadasdasd
 ```
 query {
   transactions(
